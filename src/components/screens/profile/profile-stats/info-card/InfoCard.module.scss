@@ -1,0 +1,38 @@
+.infoCard {
+	padding: 18px;
+	border-radius: 18px;
+	background: $table-head-bg;
+	border: 1px solid $border-color;
+	margin-top: auto;
+
+	.infoTitle {
+		margin-bottom: 14px;
+		font-size: 16px;
+		font-weight: 700;
+		color: $text-main;
+	}
+
+	.infoRow {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+			padding-bottom: 12px;
+			border-bottom: 1px solid $border-color;
+		}
+
+		.label {
+			font-size: 14px;
+			color: $text-secondary;
+		}
+
+		.value {
+			font-size: 14px;
+			font-weight: 700;
+			color: $text-main;
+		}
+	}
+}

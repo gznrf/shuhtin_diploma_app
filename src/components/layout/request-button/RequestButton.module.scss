@@ -1,0 +1,42 @@
+.button {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	z-index: 1000;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	padding: 14px;
+	border: none;
+	border-radius: 100%;
+	background: $primary;
+	color: $white;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 12px 28px $shadow-color-strong;
+	transition: all 0.2s ease;
+
+	svg {
+		font-size: 2rem;
+	}
+
+	&:hover {
+		background: $dark-primary;
+		transform: translateY(-2px);
+	}
+}
+
+@media (max-width: 560px) {
+	.button {
+		right: 16px;
+		bottom: 16px;
+		padding: 12px 14px;
+
+		span {
+			display: none;
+		}
+	}
+}

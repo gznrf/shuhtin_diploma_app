@@ -1,0 +1,78 @@
+.chart_card {
+	padding: 24px;
+	background: $white;
+	border-radius: 24px;
+	box-shadow: 0 16px 40px $shadow-color;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-width: 0;
+
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		color: $text-main;
+		line-height: 1.2;
+	}
+
+	&__wrapper {
+		width: 100%;
+		height: 360px;
+		min-width: 0;
+		.chart_card__empty {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			font-size: 14px;
+			color: $text-secondary;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.chart_card {
+		padding: 20px;
+		border-radius: 22px;
+
+		&__title {
+			font-size: 18px;
+		}
+
+		&__wrapper {
+			height: 320px;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.chart_card {
+		padding: 18px;
+		border-radius: 20px;
+		gap: 12px;
+
+		&__title {
+			font-size: 17px;
+		}
+
+		&__wrapper {
+			height: 280px;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.chart_card {
+		padding: 16px;
+		border-radius: 18px;
+
+		&__title {
+			font-size: 16px;
+		}
+
+		&__wrapper {
+			height: 240px;
+		}
+	}
+}

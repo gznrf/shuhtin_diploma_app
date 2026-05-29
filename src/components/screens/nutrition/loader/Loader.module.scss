@@ -1,0 +1,43 @@
+.loadingCard {
+	padding: 24px;
+	background: $background-block-color;
+	border-radius: 24px;
+	box-shadow: 0 16px 36px $shadow-color;
+
+	.skeletonTitle {
+		width: 180px;
+		height: 18px;
+		margin-bottom: 20px;
+	}
+
+	.skeletonLine {
+		width: 100%;
+		margin-bottom: 14px;
+	}
+
+	.skeletonLineShort {
+		width: 62%;
+	}
+
+	.skeletonTitle,
+	.skeletonLine,
+	.skeletonLineShort {
+		height: 14px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(214, 229, 211, 0.9) 25%,
+			rgba(241, 247, 239, 1) 50%,
+			rgba(214, 229, 211, 0.9) 75%
+		);
+		background-size: 200% 100%;
+		animation: shimmer 1.2s infinite linear;
+	}
+}
+
+@media (max-width: 640px) {
+	.loadingCard {
+		border-radius: 20px;
+		padding: 18px;
+	}
+}

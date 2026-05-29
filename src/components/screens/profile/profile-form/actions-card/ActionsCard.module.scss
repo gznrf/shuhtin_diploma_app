@@ -1,0 +1,76 @@
+.actionsCard {
+	margin-top: auto;
+	padding-top: 20px;
+	border-top: 1px solid $border-color;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.logoutBtn,
+.deleteBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	padding: 14px 16px;
+	border-radius: 14px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	transition: all 0.2s ease;
+}
+
+.actionIcon {
+	font-size: 18px;
+	flex-shrink: 0;
+}
+
+.logoutBtn {
+	background: $table-head-bg;
+	color: $text-main;
+	border: 1px solid $border-color;
+
+	&:hover {
+		background: $table-row-hover;
+	}
+}
+
+.deleteBtn {
+	background: rgba(159, 206, 177, 0.2);
+	color: $dark-primary;
+	border: 1px solid rgba(116, 155, 131, 0.3);
+
+	&:hover {
+		background: rgba(159, 206, 177, 0.35);
+	}
+}
+
+@media (max-width: 560px) {
+	.actionsCard {
+		padding-top: 16px;
+		gap: 8px;
+	}
+
+	.logoutBtn,
+	.deleteBtn {
+		padding: 13px 14px;
+		border-radius: 12px;
+		font-size: 13px;
+		gap: 8px;
+	}
+
+	.actionIcon {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 380px) {
+	.logoutBtn,
+	.deleteBtn {
+		font-size: 12px;
+		padding: 12px;
+	}
+}

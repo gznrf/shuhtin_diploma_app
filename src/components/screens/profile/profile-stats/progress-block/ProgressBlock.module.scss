@@ -1,0 +1,49 @@
+.progressBlock {
+	margin-bottom: 20px;
+	padding: 18px;
+	border-radius: 18px;
+	background: $table-head-bg;
+	border: 1px solid $border-color;
+
+	.progressHeader {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		gap: 12px;
+
+		.title {
+			font-size: 14px;
+			font-weight: 600;
+			color: $text-main;
+		}
+
+		.percent {
+			font-size: 14px;
+			font-weight: 700;
+			color: $primary;
+		}
+	}
+
+	.progressBar {
+		width: 100%;
+		height: 10px;
+		border-radius: 999px;
+		background: $border-color;
+		overflow: hidden;
+		margin-bottom: 10px;
+
+		.fill {
+			height: 100%;
+			border-radius: 999px;
+			background: linear-gradient(90deg, $accent 0%, $light-primary 100%);
+			transition: width 0.3s ease;
+		}
+	}
+
+	.progressText {
+		font-size: 13px;
+		line-height: 1.5;
+		color: $text-secondary;
+	}
+}

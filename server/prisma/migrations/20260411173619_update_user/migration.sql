@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `User` ADD COLUMN `age` INTEGER NULL,
+    ADD COLUMN `height` DOUBLE NULL,
+    ADD COLUMN `weight` DOUBLE NULL;

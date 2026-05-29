@@ -1,0 +1,92 @@
+.profileCard {
+	padding: 32px;
+	background: $white;
+	border-radius: 24px;
+	box-shadow: 0 16px 40px $shadow-color;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: 700;
+	color: $text-main;
+	line-height: 1.2;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.button {
+	margin-top: 8px;
+	padding: 14px 18px;
+	border: none;
+	border-radius: 14px;
+	background: $primary;
+	color: $white;
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 10px 24px $shadow-color;
+
+	&:hover {
+		background: $dark-primary;
+		box-shadow: 0 14px 28px $shadow-color-strong;
+	}
+
+	&:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		box-shadow: none;
+	}
+}
+
+@media (max-width: 900px) {
+	.profileCard {
+		padding: 26px;
+		border-radius: 22px;
+	}
+
+	.title {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 560px) {
+	.profileCard {
+		padding: 22px;
+		border-radius: 20px;
+	}
+
+	.title {
+		font-size: 20px;
+		margin-bottom: 16px;
+	}
+
+	.form {
+		gap: 16px;
+	}
+
+	.button {
+		padding: 13px 16px;
+		font-size: 14px;
+		border-radius: 12px;
+	}
+}
+
+@media (max-width: 380px) {
+	.profileCard {
+		padding: 18px;
+		border-radius: 18px;
+	}
+
+	.title {
+		font-size: 18px;
+	}
+}

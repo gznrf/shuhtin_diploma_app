@@ -1,0 +1,55 @@
+.statsGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	margin-bottom: 20px;
+
+	.miniCard {
+		padding: 16px;
+		border-radius: 18px;
+		background: linear-gradient(
+			180deg,
+			$table-head-bg 0%,
+			$background-block-color 100%
+		);
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		border: 1px solid $border-color;
+		transition: all 0.2s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 10px 20px $shadow-color;
+		}
+
+		&Icon {
+			font-size: 20px;
+			color: $primary;
+		}
+
+		&Label {
+			font-size: 12px;
+			font-weight: 600;
+			color: $text-secondary;
+		}
+
+		&Value {
+			font-size: 20px;
+			font-weight: 700;
+			color: $text-main;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.statsGrid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.statsGrid {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,87 @@
+.scroll_container {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	margin-top: 50px;
+
+	.scroll_track {
+		display: flex;
+		align-items: center;
+		gap: 110px;
+		width: max-content;
+		animation: moveLeft 30s linear infinite;
+
+		.plate_img {
+			width: 380px;
+			height: 380px;
+			object-fit: cover;
+			border-radius: 50%;
+			user-select: none;
+			pointer-events: none;
+		}
+		&::after {
+			content: '';
+			display: flex;
+			width: 100%;
+		}
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 10%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 2;
+	}
+	&::before {
+		left: 0;
+		background: linear-gradient(to right, white 0%, transparent 100%);
+	}
+	&::after {
+		right: 0;
+		background: linear-gradient(to left, white 0%, transparent 100%);
+	}
+
+	@media (max-width: 1200px) {
+		.scroll_track {
+			gap: 50px;
+			.plate_img {
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.scroll_track {
+			gap: 40px;
+			.plate_img {
+				width: 280px;
+				height: 280px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.scroll_track {
+			gap: 30px;
+			.plate_img {
+				width: 240px;
+				height: 240px;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.scroll_track {
+			gap: 15px;
+			.plate_img {
+				width: 200px;
+				height: 200px;
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  age       Int?
+  weight    Float?
+  height    Float?
+  goal      String?
+
+  analysisCount Int @default(0)
+  
+  createdAt DateTime @default(now())
+
+  meals     MealEntry[]
+}
+
+model MealEntry {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  date      DateTime
+  mealType  String   // breakfast | lunch | dinner | snack
+
+  title     String
+
+  calories  Int
+  protein   Float?
+  fat       Float?
+  carbs     Float?
+
+  createdAt DateTime @default(now())
+}
+
+model Request {
+  id        Int      @id @default(autoincrement())
+  name      String
+  number    String
+  createdAt DateTime @default(now())
+}

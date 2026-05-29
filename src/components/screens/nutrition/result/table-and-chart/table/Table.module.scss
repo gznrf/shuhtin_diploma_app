@@ -1,0 +1,149 @@
+.table_card {
+	padding: 24px;
+	background: $white;
+	border-radius: 24px;
+	box-shadow: 0 16px 40px $shadow-color;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		color: $text-main;
+	}
+}
+
+.table_card__wrapper {
+	overflow-x: auto;
+	border-radius: 16px;
+
+	/* красивый скролл */
+	&::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $border-color;
+		border-radius: 6px;
+	}
+}
+
+.table {
+	width: 100%;
+	min-width: 720px;
+	border-collapse: collapse;
+	font-size: 14px;
+
+	thead {
+		th {
+			padding: 14px 12px;
+			font-size: 12px;
+			font-weight: 700;
+			color: $text-secondary;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+			background: $table-head-bg;
+			border-bottom: 1px solid $border-color;
+
+			&:first-child {
+				border-top-left-radius: 12px;
+			}
+
+			&:last-child {
+				border-top-right-radius: 12px;
+			}
+
+			&:not(:first-child) {
+				text-align: center;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			transition: background 0.2s ease;
+
+			&:hover {
+				background: $table-row-hover;
+			}
+		}
+
+		td {
+			padding: 14px 12px;
+			color: $text-main;
+			border-bottom: 1px solid $border-color;
+
+			&:not(:first-child) {
+				text-align: center;
+			}
+		}
+	}
+
+	tfoot {
+		tr {
+			background: $table-head-bg;
+		}
+
+		td {
+			padding: 16px 12px;
+			font-weight: 700;
+			color: $text-main;
+			border-top: 1px solid $border-color;
+
+			&:not(:first-child) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
+	.table {
+		min-width: 640px;
+
+		thead th {
+			font-size: 11px;
+			padding: 12px;
+		}
+
+		tbody td {
+			padding: 12px;
+			font-size: 13px;
+		}
+
+		tfoot td {
+			padding: 14px;
+			font-size: 13px;
+		}
+	}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+	.table_card {
+		overflow-x: scroll;
+		padding: 16px;
+		border-radius: 20px;
+	}
+
+	.table {
+		min-width: 600px;
+
+		thead th {
+			font-size: 10px;
+			padding: 10px;
+		}
+
+		tbody td {
+			font-size: 12px;
+			padding: 10px;
+		}
+
+		tfoot td {
+			font-size: 12px;
+			padding: 12px;
+		}
+	}
+}

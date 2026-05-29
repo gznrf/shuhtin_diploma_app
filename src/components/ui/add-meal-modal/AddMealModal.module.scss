@@ -1,0 +1,188 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.65);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	z-index: 1000;
+}
+
+.modal {
+	position: relative;
+	width: 100%;
+	max-width: 420px;
+	background: $white;
+	padding: 24px 28px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	box-shadow: 0 20px 40px $shadow-color-strong;
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 600;
+		text-align: center;
+		color: $primary;
+		line-height: 1.2;
+		padding-right: 24px;
+	}
+
+	&__form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+		gap: 10px;
+
+		&__input {
+			padding: 12px 14px;
+			border-radius: 16px;
+			outline: none;
+			border: 1px solid $border-color;
+			width: 100%;
+			color: $text-main;
+			font-size: 1rem;
+			font-weight: 500;
+			transition: all 0.2s ease;
+
+			&::placeholder {
+				color: $light-primary;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+
+			&:focus {
+				border-color: $light-primary;
+				box-shadow: 0 0 0 3px rgba(116, 155, 131, 0.16);
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: center;
+		margin-top: 6px;
+	}
+}
+
+.btn {
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.addBtn {
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 12px 22px;
+	border-radius: 16px;
+	background-color: $primary;
+	color: $white;
+
+	&:hover {
+		background: $dark-primary;
+		transform: translateY(-1px);
+	}
+}
+
+.cancelBtn {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	font-size: 2rem;
+	font-weight: 600;
+	transform: rotate(45deg);
+	opacity: 0.8;
+	color: $primary;
+	background: transparent;
+	line-height: 1;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 640px) {
+	.overlay {
+		padding: 16px;
+	}
+
+	.modal {
+		max-width: 100%;
+		padding: 20px 18px;
+		border-radius: 18px;
+
+		&__title {
+			font-size: 1.6rem;
+			padding-right: 20px;
+		}
+
+		&__form {
+			gap: 9px;
+
+			&__input {
+				padding: 11px 12px;
+				font-size: 0.95rem;
+				border-radius: 14px;
+
+				&::placeholder {
+					font-size: 0.95rem;
+				}
+			}
+		}
+	}
+
+	.addBtn {
+		width: 100%;
+		padding: 12px 18px;
+		font-size: 0.95rem;
+		border-radius: 14px;
+	}
+
+	.cancelBtn {
+		top: 8px;
+		right: 12px;
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 420px) {
+	.overlay {
+		padding: 12px;
+	}
+
+	.modal {
+		padding: 18px 14px 16px;
+		border-radius: 16px;
+
+		&__title {
+			font-size: 1.35rem;
+		}
+
+		&__form {
+			&__input {
+				padding: 10px 12px;
+				font-size: 0.9rem;
+
+				&::placeholder {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+
+	.addBtn {
+		font-size: 0.9rem;
+		padding: 11px 16px;
+	}
+
+	.cancelBtn {
+		font-size: 1.6rem;
+		top: 6px;
+		right: 10px;
+	}
+}

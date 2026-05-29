@@ -1,0 +1,103 @@
+.addToDiet {
+	width: auto;
+	margin: 24px auto;
+	padding: 20px;
+	background: $white;
+	border-radius: 20px;
+	box-shadow: 0 12px 30px $shadow-color;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.addRow {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.date,
+.select {
+	height: 48px;
+	padding: 0 16px;
+	border-radius: 12px;
+	border: 1px solid $border-color;
+	background: $white;
+	font-size: 14px;
+	color: $text-main;
+	outline: none;
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.date {
+	min-width: 160px;
+}
+
+.select {
+	min-width: 170px;
+	cursor: pointer;
+}
+
+.date:focus,
+.select:focus {
+	border-color: $light-primary;
+	box-shadow: 0 0 0 2px rgba(116, 155, 131, 0.2);
+}
+
+.addBtn {
+	height: 48px;
+	padding: 0 18px;
+	border-radius: 12px;
+	border: none;
+	background: $primary;
+	color: $white;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	white-space: nowrap;
+
+	&:hover:not(:disabled) {
+		background: $dark-primary;
+		transform: translateY(-1px);
+	}
+
+	&:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		transform: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.addToDiet {
+		padding: 18px;
+		border-radius: 18px;
+	}
+
+	.addRow {
+		gap: 10px;
+		flex-direction: column;
+	}
+
+	.date,
+	.select,
+	.addBtn {
+		width: 100%;
+	}
+
+	.addBtn {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.addToDiet {
+		padding: 16px;
+		border-radius: 16px;
+	}
+}

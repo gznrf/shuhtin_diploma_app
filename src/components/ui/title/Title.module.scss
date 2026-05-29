@@ -1,0 +1,84 @@
+.title {
+	margin: 40px 0;
+	font-weight: 500;
+	line-height: 1.2;
+	color: $black;
+
+	span {
+		display: block;
+		font-weight: 700;
+		color: $primary;
+		margin-top: 6px;
+	}
+}
+
+/* ALIGN */
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+/* SIZES */
+.lg {
+	font-size: 5rem;
+}
+
+.md {
+	font-size: 3.5rem;
+}
+
+.sm {
+	font-size: 2.2rem;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+	.lg {
+		font-size: 3.2rem;
+	}
+
+	.md {
+		font-size: 2.6rem;
+	}
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+	.title {
+		margin: 30px 0;
+	}
+
+	.lg {
+		font-size: 2.4rem;
+	}
+
+	.md {
+		font-size: 2rem;
+	}
+
+	.sm {
+		font-size: 1.6rem;
+	}
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+	.lg {
+		font-size: 2rem;
+	}
+
+	.md {
+		font-size: 1.7rem;
+	}
+
+	.sm {
+		font-size: 1.4rem;
+	}
+}

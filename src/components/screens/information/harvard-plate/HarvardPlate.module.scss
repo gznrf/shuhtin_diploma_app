@@ -1,0 +1,44 @@
+.plate {
+	padding: 1rem 0 2rem;
+
+	&_container {
+		position: relative;
+		width: min(100%, 800px);
+		margin: 0 auto;
+		padding: 0 1rem;
+
+		&_image {
+			width: 100%;
+			display: block;
+			height: auto;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.plate {
+		padding: 0.5rem 0 1.5rem;
+
+		&_container {
+			width: min(100%, 680px);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.plate_container {
+		width: min(100%, 560px);
+		padding: 0 0.75rem;
+	}
+}
+
+@media (max-width: 540px) {
+	.plate {
+		padding: 0 0 1rem;
+
+		&_container {
+			width: 100%;
+			padding: 0 0.5rem;
+		}
+	}
+}
