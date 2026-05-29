@@ -1,9 +1,10 @@
+import { apiUrl } from '@/api/base'
 import { StorageService } from '@/services/storage.service'
 
 export const getRecommendations = async () => {
 	const token = new StorageService().getItem('token')
 
-	const res = await fetch('http://localhost:3001/recommendations', {
+	const res = await fetch(apiUrl('/recommendations'), {
 		headers: {
 			Authorization: `Bearer ${token}`
 		}

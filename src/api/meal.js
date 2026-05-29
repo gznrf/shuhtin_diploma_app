@@ -1,6 +1,7 @@
+import { apiUrl } from '@/api/base'
 import { StorageService } from '@/services/storage.service'
 
-const API = 'http://localhost:3001/meals'
+const API = apiUrl('/meals')
 
 export const getMeals = async (date) => {
 	const token = new StorageService().getItem('token')
@@ -17,7 +18,7 @@ export const getMeals = async (date) => {
 export const getMealStats = async () => {
 	const token = new StorageService().getItem('token')
 
-	const res = await fetch('http://localhost:3001/meals/stats', {
+	const res = await fetch(apiUrl('/meals/stats'), {
 		headers: {
 			Authorization: `Bearer ${token}`
 		}

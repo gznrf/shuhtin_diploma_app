@@ -1,3 +1,4 @@
+import { apiUrl } from '@/api/base'
 import Layout from '@/components/layout/Layout'
 import Title from '@/components/ui/title/Title'
 import { showNotification } from '@/services/notification.service'
@@ -30,7 +31,7 @@ const Nutrition = () => {
 				return
 			}
 
-			const res = await fetch('http://localhost:3001/analyze-meal', {
+			const res = await fetch(apiUrl('/analyze-meal'), {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

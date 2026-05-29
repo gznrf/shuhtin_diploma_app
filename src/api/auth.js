@@ -1,7 +1,8 @@
+import { apiUrl } from '@/api/base'
 import { StorageService } from '@/services/storage.service'
 
 export const registerUser = async ({ name, email, password }) => {
-	const res = await fetch('http://localhost:3001/auth/register', {
+	const res = await fetch(apiUrl('/auth/register'), {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -19,7 +20,7 @@ export const registerUser = async ({ name, email, password }) => {
 }
 
 export const loginUser = async ({ email, password }) => {
-	const res = await fetch('http://localhost:3001/auth/login', {
+	const res = await fetch(apiUrl('/auth/login'), {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -43,7 +44,7 @@ export const getCurrentUser = async () => {
 		throw new Error('Токен не найден')
 	}
 
-	const res = await fetch('http://localhost:3001/auth/me', {
+	const res = await fetch(apiUrl('/auth/me'), {
 		method: 'GET',
 		headers: {
 			Authorization: `Bearer ${token}`
@@ -66,7 +67,7 @@ export const updateCurrentUser = async (userData) => {
 		throw new Error('Токен не найден')
 	}
 
-	const res = await fetch('http://localhost:3001/auth/me', {
+	const res = await fetch(apiUrl('/auth/me'), {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json',

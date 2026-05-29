@@ -1,3 +1,4 @@
+import { apiUrl } from '@/api/base'
 import { showNotification } from '@/services/notification.service'
 import { StorageService } from '@/services/storage.service'
 import { useState } from 'react'
@@ -21,7 +22,7 @@ const AddToDiet = ({ data }) => {
 
 			setLoading(true)
 
-			const res = await fetch('http://localhost:3001/meals', {
+			const res = await fetch(apiUrl('/meals'), {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

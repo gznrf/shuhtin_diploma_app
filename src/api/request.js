@@ -1,5 +1,7 @@
+import { apiUrl } from '@/api/base'
+
 export const createRequest = async ({ name, number }) => {
-	const res = await fetch('http://localhost:3001/requests', {
+	const res = await fetch(apiUrl('/requests'), {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

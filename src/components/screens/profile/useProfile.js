@@ -1,3 +1,4 @@
+import { apiUrl } from '@/api/base'
 import { updateCurrentUser } from '@/api/auth'
 import { useGetUserInfo } from '@/hooks/useGetUserInfo'
 import { showNotification } from '@/services/notification.service'
@@ -70,7 +71,7 @@ export const useProfile = () => {
 		try {
 			const token = new StorageService().getItem('token')
 
-			const res = await fetch('http://localhost:3001/auth/me', {
+			const res = await fetch(apiUrl('/auth/me'), {
 				method: 'DELETE',
 				headers: {
 					Authorization: `Bearer ${token}`
