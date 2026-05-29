@@ -1,5 +1,5 @@
 import { createRequest } from '@/api/request'
-import { showNotification } from '@/services/Notification.service'
+import { showNotification } from '@/services/notification.service'
 import { formatPhone } from '@/utils/formatPhone'
 import { useEffect, useState } from 'react'
 import styles from './RequestModal.module.scss'
