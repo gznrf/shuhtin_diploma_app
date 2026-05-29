@@ -1,11 +1,10 @@
 FROM node:20-alpine
 
 WORKDIR /app
-
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl wget
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --omit=dev
 
 COPY prisma ./prisma
 COPY prisma.config.ts ./
@@ -16,8 +15,6 @@ COPY certs ./certs
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
-ENV NODE_ENV=production
 EXPOSE 3001
-
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["node", "src/server.js"]
